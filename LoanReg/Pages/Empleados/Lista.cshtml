@@ -1,0 +1,44 @@
+﻿@page
+@model LoanReg.Pages.ListaModel
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Username</th>
+                <th>Role Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empleados in Model.Empleados)
+            {
+            <tr>
+                <td>@empleados.Id</td>
+                <td>@empleados.Nombre</td>
+                <td>@empleados.Apellido</td>
+                <td>@empleados.Telefono</td>
+                <td>@empleados.Username</td>
+                <td>@empleados.Role.Nombre</td>
+                <td><a asp-page="./Detalles" asp-route-Id="@empleados.Id" class="btn btn-success" style="cursor:pointer">Ver Detalles</a></td>
+                <td><a asp-page="./Editar" asp-route-Id="@empleados.Id" class="btn btn-warning" style="cursor:pointer">Editar</a></td>
+                <td><a asp-page="./Eliminar" asp-route-Id="@empleados.Id" class="btn btn-danger" style="cursor:pointer">Eliminar</a></td>
+                @*<td>@empleados.RoleNombre</td>*@
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<a class="btn btn-primary"asp-page="./Editar">Registrar Empleado</a>
+
+
+
+

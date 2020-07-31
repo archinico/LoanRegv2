@@ -1,0 +1,56 @@
+﻿@page "{Id:int}"
+@model LoanReg.Pages.Empleados.DetallesModel
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Informacion de @Model.Empleados.Nombre</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label style="font-weight:bold">Id: </label>
+            @Model.Empleados.Id
+            <br />
+
+            <label style="font-weight:bold">Apellido: </label>
+            @Model.Empleados.Apellido
+            <br />
+
+            <label style="font-weight:bold">Direccion: </label>
+            @Model.Empleados.Direccion
+            <br />
+
+            <label style="font-weight:bold">Username: </label>
+            @Model.Empleados.Username
+            <br />
+
+            <label style="font-weight:bold">RoleId: </label>
+            @Model.Empleados.RoleId
+            <br />
+        </div>
+
+        <div class="col">
+            <label style="font-weight:bold">Nombre: </label>
+            @Model.Empleados.Nombre
+            <br />
+
+            <label style="font-weight:bold">Telefono: </label>
+            @Model.Empleados.Telefono
+            <br />
+
+            <label style="font-weight:bold">Correo: </label>
+            @Model.Empleados.Correo
+            <br />
+
+            <label style="font-weight:bold">Password: </label>
+            @Model.Empleados.Password
+            <br />
+
+            @*<label style="font-weight:bold">Role Nombre: </label>
+            @Model.Empleados.Role.Nombre
+            <br />*@
+        </div>
+    </div>
+</div>
+

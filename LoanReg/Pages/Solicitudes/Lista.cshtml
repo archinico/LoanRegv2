@@ -1,0 +1,44 @@
+﻿@page
+@model LoanReg.Pages.Solicitudes.ListaModel
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Cliente</th>
+                    <th>Monto Solicitado</th>
+                    <th>Fecha Solicitud</th>
+                    <th>Cuotas</th>
+                    <th>Interes</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var solicitud in Model.Solicitudes)
+                {
+                <tr>
+                    <td>@solicitud.Id</td>
+                    <td>@solicitud.Cliente.Nombre</td>
+                    <td>@solicitud.MontoSolicitado</td>
+                    <td>@solicitud.FechaSolicitud.ToShortDateString()</td>
+                    <td>@solicitud.Cuotas</td>
+                    <td>@solicitud.Interes</td>
+                    <td>@solicitud.Estado</td>
+                    <td><a class="btn btn-success" asp-page="./Detalles" asp-route-Id="@solicitud.Id">Detalles</a></td>
+                    <td><a class="btn btn-warning" asp-page="./Editar" asp-route-Id="@solicitud.Id">Editar</a></td>
+                    <td><a class="btn btn-outline-warning" asp-page="../Clientes/Editar" asp-route-Id="@solicitud.ClienteId">Cliente</a></td>
+                    <td><a class="btn btn-danger" asp-page="./Eliminar" asp-route-Id="@solicitud.Id">Eliminar</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-primary" asp-page="./Editar">Crear Solicitud</a>
+</div>

@@ -1,0 +1,91 @@
+﻿@page "{Id:int?}"
+@model LoanReg.Pages.EditarModel
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+
+<form method="post">
+
+    <input type="hidden" asp-for="Empleados.Id" />
+
+    <div class="form-group">
+        <label asp-for="Empleados.Nombre">Nombre</label>
+        <input type="text" class="form-control" asp-for="Empleados.Nombre" />
+        <span class="text-muted text-danger" asp-validation-for="Empleados.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Empleados.Apellido">Apellido</label>
+        <input type="text" class="form-control" asp-for="Empleados.Apellido" />
+        <span class="text-muted text-danger" asp-validation-for="Empleados.Apellido"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Empleados.Telefono">Telefono</label>
+        <input type="text" class="form-control" asp-for="Empleados.Telefono" />
+        <span class="text-muted text-danger" asp-validation-for="Empleados.Telefono"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Empleados.Direccion">Direccion</label>
+        <input type="text" class="form-control" asp-for="Empleados.Direccion" />
+        <span class="text-muted text-danger" asp-validation-for="Empleados.Direccion"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Empleados.Correo">Correo</label>
+        <input type="text" class="form-control" asp-for="Empleados.Correo" />
+        <span class="text-muted text-danger" asp-validation-for="Empleados.Correo"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Empleados.RoleId">Rol</label>
+        <select name="rolId" asp-items="Model.Roles" asp-for="Empleados.RoleId" class="form-control">Seleccione un Rol</select>
+        <span class="text-muted text-danger" asp-validation-for="Empleados.RoleId"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Empleados.Username">Username</label>
+        <input type="text" class="form-control" asp-for="Empleados.Username" />
+        <span class="text-muted text-danger" asp-validation-for="Empleados.Username"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Empleados.Password">Password</label>
+        <input type="password" class="form-control" asp-for="Empleados.Password" />
+        <span class="text-muted text-danger" asp-validation-for="Empleados.Password"></span>
+    </div>
+    <br />
+    <div class="container text-center">
+        <button class="btn btn-success" type="submit">Guardar Cambios</button>
+        <a href="javascript: history.go(-1)" class="btn btn-danger">Cancelar</a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>

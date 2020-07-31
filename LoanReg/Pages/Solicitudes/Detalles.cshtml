@@ -1,0 +1,191 @@
+﻿@page "{Id:int}"
+@model LoanReg.Pages.Solicitudes.DetallesModel
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles</h1>
+
+<div class="container">
+
+    <div id="soliciData" class="row">
+
+        <div id="izquierda" class="col">
+            <div class="form-group">
+                <label style="font-weight:bold">Solicitud Id</label>
+                @Model.Solicitudes.Id
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Monto Solicitado</label>
+                @Model.Solicitudes.MontoSolicitado
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Tipo de Pago</label>
+                @Model.Solicitudes.TipoPago
+                <br />
+            </div>
+        </div>
+
+
+        <!------------------------------------------------------------------------------------->
+        <div id="centro" class="col">
+            <div class="form-group">
+                <label style="font-weight:bold">Fecha de Solicitud</label>
+                @Model.Solicitudes.FechaSolicitud
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Intereses</label>
+                @Model.Solicitudes.Interes
+                <br />
+            </div>
+        </div>
+
+        <!------------------------------------------------------------------------------------->
+
+        <div id="derecha" class="col">
+            <div class="form-group">
+                <label style="font-weight:bold">Estado de Solicitud</label>
+                @if (Model.Solicitudes.Estado == true)
+                {
+                    <label>APROBADA</label>
+                }
+                else
+                {
+                    <label>RECHAZADA</label>
+                }
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Cuotas</label>
+                @Model.Solicitudes.Cuotas
+                <br />
+            </div>
+        </div>
+
+    </div>
+
+    <div id="clientData" class="row">
+        <div id="izquierda" class="col">
+            <div class="form-group">
+                <label style="font-weight:bold">Cliente Id</label>
+                @Model.Solicitudes.Cliente.Id
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Cedula</label>
+                @Model.Solicitudes.Cliente.Cedula
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Sexo</label>
+                @Model.Solicitudes.Cliente.Sexo
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Edad</label>
+                @Model.Solicitudes.Cliente.Edad
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Trabaja</label>
+                @if (Model.Solicitudes.Cliente.Trabaja == true)
+                {
+                    <label>SI</label>
+                }
+                else
+                {
+                    <label>NO</label>
+                }
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Fecha de Ingreso</label>
+                @Model.Solicitudes.Cliente.EmpIngresoFech
+                <br />
+            </div>
+        </div>
+        <!------------------------------------------------------------------------->
+        <div id="centro" class="col">
+            <div class="form-group">
+                <label style="font-weight:bold">Cliente Nombre</label>
+                @Model.Solicitudes.Cliente.Nombre
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Telefono</label>
+                @Model.Solicitudes.Cliente.Telefono
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Estado Civil</label>
+                @Model.Solicitudes.Cliente.EstadoCivil
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Direccion</label>
+                @Model.Solicitudes.Cliente.Direccion
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Nombre Empresa</label>
+                @Model.Solicitudes.Cliente.EmpNombre
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Salario</label>
+                @Model.Solicitudes.Cliente.Salario
+                <br />
+            </div>
+        </div>
+        <!------------------------------------------------------------------------->
+        <div id="derecha" class="col">
+            <div class="form-group">
+                <label style="font-weight:bold">Apellido</label>
+                @Model.Solicitudes.Cliente.Apellido
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Correo</label>
+                @Model.Solicitudes.Cliente.Correo
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Fecha de Nacimiento</label>
+                @Model.Solicitudes.Cliente.FechaNac
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Municipio</label>
+                @Model.Solicitudes.Cliente.Municipio
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label style="font-weight:bold">Direccion Empresa</label>
+                @Model.Solicitudes.Cliente.EmpDireccion
+                <br />
+            </div>
+        </div>
+    </div>
+
+</div>

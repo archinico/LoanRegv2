@@ -1,0 +1,31 @@
+﻿@page "{Id:int}"
+@model LoanReg.Pages.Clientes.EliminarModel
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminar</h1>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container text-center" style="border-style:dotted; background-color: cornsilk">
+
+    <form method="post">
+        <br />
+        <h3>¿Seguro que desea eliminar a @Model.Clientes.Nombre @Model.Clientes.Nombre?</h3>
+        <br />
+        <a asp-page="./RegistroMaterias" class="btn btn-primary">Cancelar</a>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <br />
+    </form>
+    <br />
+</div>

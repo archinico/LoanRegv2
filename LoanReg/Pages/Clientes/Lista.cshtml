@@ -1,0 +1,41 @@
+﻿@page
+@model LoanReg.Pages.Clientes.ListaModel
+@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cedula</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cliente in Model.Clientes)
+                {
+                    <tr>
+                        <td>@cliente.Id</td>
+                        <td>@cliente.Nombre</td>
+                        <td>@cliente.Apellido</td>
+                        <td>@cliente.Cedula</td>
+                        <td>@cliente.Telefono</td>
+                        <td>@cliente.Correo</td>
+                        <td><a class="btn btn-outline-success" asp-page="./Detalles" asp-route-Id="@cliente.Id">Detalles</a></td>
+                        <td><a class="btn btn-outline-warning" asp-page="./Editar" asp-route-Id="@cliente.Id">Editar</a></td>
+                        <td><a class="btn btn-outline-danger" asp-page="./Eliminar" asp-route-Id="@cliente.Id">Eliminar</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-primary" asp-page="./Editar">Crear Cliente</a>
+</div>

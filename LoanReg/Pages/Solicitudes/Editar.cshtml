@@ -1,0 +1,254 @@
+﻿@page "{Id:int?}"
+@model LoanReg.EditarModel
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+        
+
+<form method="post">
+    <input type="hidden" asp-for="Solicitudes.Id" />
+    <div class="container">
+        
+        @if (Model.Solicitudes.Id == 0)
+        {
+            <div class="row" style="border:dashed">
+
+                <div class="col">
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.MontoSolicitado">Monto Solicitado</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.MontoSolicitado" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.MontoSolicitado"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Interes">Interes</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Interes" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Interes"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.TipoPago">Tipo de Pago</label>
+                        <select class="form-control" asp-items="Model.TipoPago"></select>
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.TipoPago"></span>
+                    </div>
+                </div>
+
+
+                <div class="col">
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.FechaSolicitud">Fecha de Solicitud</label>
+                        <input type="date" class="form-control" asp-for="Solicitudes.FechaSolicitud" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.FechaSolicitud"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cuotas">Cuotas</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cuotas" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cuotas"></span>
+                    </div>
+
+                    <label asp-for="Solicitudes.Estado">Estado de Solicitud</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" asp-for="Solicitudes.Estado" />
+                        <label asp-for="Solicitudes.Estado" class="form-check-label">APROBADA</label>
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Estado"></span>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <br />
+            <br />
+            <div class="row" style="border:dashed">
+
+                <div class="container">
+                    <h3 class="text-center">Datos del Cliente</h3>
+                </div>
+
+                <div class="col" id="izquierda">
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.ClienteId">ClienteId</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.ClienteId" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.ClienteId"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Nombre">Apellido</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Nombre" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Nombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Telefono">Telefono</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Telefono" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Telefono"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Correo">Correo</label>
+                        <input type="email" class="form-control" asp-for="Solicitudes.Cliente.Correo" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Correo"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.EstadoCivil">Estado Civil</label>
+                        <select class="form-control" asp-items="Model.EstadoCivil"></select>
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.EstadoCivil"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Edad">Edad</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Edad" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Edad"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Municipio">Municipio</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Municipio" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Municipio"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.EmpNombre">Nombre Empresa</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.EmpNombre" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.EmpNombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.EmpIngresoFech">Fecha Contratacion</label>
+                        <input type="date" class="form-control" asp-for="Solicitudes.Cliente.EmpIngresoFech" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.EmpIngresoFech"></span>
+                    </div>
+
+                </div>
+
+                <div class="col" id="derecha">
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Nombre">Cliente Nombre</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Nombre" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Nombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Cedula">Cedula</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Cedula" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Cedula"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Salario">Salario</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Salario" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Salario"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Sexo">Sexo</label>
+                        <select class="form-control" asp-items="Model.Sexo"></select>
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Sexo"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.FechaNac">Fecha Nacimiento</label>
+                        <input type="date" class="form-control" asp-for="Solicitudes.Cliente.FechaNac" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.FechaNac"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Direccion">Direccion</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Direccion" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Direccion"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.EmpDireccion">Direccion Empresa</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.EmpDireccion" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.EmpDireccion"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Trabaja">Trabaja?</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" asp-for="Solicitudes.Cliente.Trabaja" />
+                            <label asp-for="Solicitudes.Cliente.Trabaja" class="form-check-label form">Si</label>
+                            <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Trabaja"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.ClienteId">ClienteId</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.ClienteId" disabled />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.ClienteId"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.MontoSolicitado">Monto Solicitado</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.MontoSolicitado" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.MontoSolicitado"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Interes">Interes</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Interes" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Interes"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.TipoPago">Tipo de Pago</label>
+                        <select class="form-control" asp-items="Model.TipoPago"></select>
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.TipoPago"></span>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cliente.Nombre">Cliente Nombre</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cliente.Nombre" disabled />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cliente.Nombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.FechaSolicitud">Fecha de Solicitud</label>
+                        <input type="date" class="form-control" asp-for="Solicitudes.FechaSolicitud" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.FechaSolicitud"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Solicitudes.Cuotas">Cuotas</label>
+                        <input type="text" class="form-control" asp-for="Solicitudes.Cuotas" />
+                        <span class="text-muted text-danger" asp-validation-for="Solicitudes.Cuotas"></span>
+                    </div>
+
+
+                </div>
+            </div>
+        }
+        <br />
+        <br />
+    </div>
+
+    <button class="btn btn-success" type="submit">Guardar Cambios</button>
+    <a href="javascript: history.go(-1)" class="btn btn-danger">Cancelar</a>
+
+</form>
